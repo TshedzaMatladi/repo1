@@ -29,32 +29,41 @@ print(average_revenue)
 
 # Question 3: What is the average revenue of movies from 2015 to 2017 in the dataset?
 average_revenue_2015_2017 = df[(df['Year'] >= 2015) & (df['Year'] <= 2017)]['Revenue (Millions)'].mean()
+print(average_revenue_2015_2017)
 
 # Question 4: How many movies were released in the year 2016?
 movies_2016 = df[df['Year'] == 2016].shape[0]
+print(movies_2016)
 
 # Question 5: How many movies were directed by Christopher Nolan?
 movies_nolan = df[df['Director'] == 'Christopher Nolan'].shape[0]
+print(movies_nolan)
 
 # Question 6: How many movies in the dataset have a rating of at least 8.0?
 high_rated_movies = df[df['Rating'] >= 8.0].shape[0]
+print(high_rated_movies)
 
 # Question 7: What is the median rating of movies directed by Christopher Nolan?
 median_rating_nolan = df[df['Director'] == 'Christopher Nolan']['Rating'].median()
+print(median_rating_nolan)
 
 # Question 8: Find the year with the highest average rating?
 year_highest_avg_rating = df.groupby('Year')['Rating'].mean().idxmax()
+print(year_highest_avg_rating)
 
 # Question 9: What is the percentage increase in the number of movies made between 2006 and 2016?
 movies_2006 = df[df['Year'] == 2006].shape[0]
 movies_2016 = df[df['Year'] == 2016].shape[0]
 percentage_increase = ((movies_2016 - movies_2006) / movies_2006) * 100
+print(percentage_increase)
 
 # Question 10: Find the most common actor in all the movies?
 most_common_actor = df['Actors'].str.split(', ').explode().mode()[0]
+print (most_common_actor)
 
 # Question 11: How many unique genres are there in the dataset?
 unique_genres_count = df['Genre'].str.split(', ').explode().nunique()
+print (unique_genres_count)
 
 # Question 12: Do a correlation of the numerical features, what insights can you deduce?
 
